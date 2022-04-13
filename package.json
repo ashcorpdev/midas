@@ -1,5 +1,5 @@
 {
-  "name": "aurum",
+  "name": "midas",
   "version": "1.0.0",
   "description": "A Guilded Bot designed for simple moderation and features.",
   "main": "./src/app.ts",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashcorpdev/aurum.git"
+    "url": "git+https://github.com/ashcorpdev/midas.git"
   },
   "author": "AshCorpDev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ashcorpdev/aurum/issues"
+    "url": "https://github.com/ashcorpdev/midas/issues"
   },
-  "homepage": "https://github.com/ashcorpdev/aurum#readme",
+  "homepage": "https://github.com/ashcorpdev/midas#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
     "guilded.js": "^0.4.1",
