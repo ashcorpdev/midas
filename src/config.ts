@@ -18,6 +18,7 @@ async function loadModules() {
                 require(`./lib/${key}`)
             }
           }
+          
     } catch (error) { console.log(error) }
     
 }
