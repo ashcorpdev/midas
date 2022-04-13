@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ashcorpdev/midas#readme",
   "dependencies": {
+    "consola": "^2.15.3",
     "dotenv": "^16.0.0",
     "guilded.js": "^0.4.1",
     "tsc-watch": "^5.0.3",

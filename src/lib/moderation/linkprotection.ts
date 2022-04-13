@@ -1,4 +1,5 @@
 // Checks if there are URLs present in a message.
+import consola from "consola"
 import Client, { Member, Message } from "guilded.js";
 import fs from "fs";
 const { configuration } = require("../../config");
@@ -15,7 +16,7 @@ client.on("messageCreated", async (message: Message) => {
     ).getRoles();
     let excluded_roles: number[] = configuration.modules.moderation.submodules.linkprotection.excluded_roles
     if (!roles.some(item => excluded_roles.includes(item))) {
-      console.log("Message contained only a url!");
+      consola.warn("Message contained only a url!");
       client.messages
         .delete(message.channelId, message.id)
         .then(async () => {
@@ -29,7 +30,7 @@ client.on("messageCreated", async (message: Message) => {
           }, 30000);
         })
         .catch((err) => {
-          console.log(err);
+          consola.error(err);
         });
     }
   }

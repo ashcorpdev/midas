@@ -1,27 +1,28 @@
 let config: any
-
+import consola from "consola"
 async function reloadConfiguration() {
     config = require('../config.json')
     module.exports.configuration = config
-    console.log('Loaded configuration.')
-    console.log(`Registering bot as '${config.name}'.`)
+    consola.log('- Loading configuration...')
+    consola.log(`Registering bot as '${config.name}'.`)
 }
 
 async function loadModules() {
+    consola.log('- Loading modules...')
     let modules = config.modules
 
     try {
         let key: string, value: any
         for ([key, value] of Object.entries(modules)) {
             if(value.enabled) {
-                console.log(`Enabled '${key}' module.`)
+                consola.success(`Enabled '${key}' module.`)
                 require(`./lib/${key}`)
             }
           }
           
-    } catch (error) { console.log(error) }
+    } catch (error) { consola.log(error) }
 
-    console.log('Configuration complete. Midas is active.')
+    consola.start('Configuration complete. Midas is active.')
     
 }
 

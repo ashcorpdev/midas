@@ -1,7 +1,8 @@
 import Client, { Message } from "guilded.js"
+import consola from "consola"
 const { configuration } = require('../../config')
 const client: Client = require('../client').guildedClient
-console.log('Loaded ping command.')
+consola.success('Loaded ping command.')
 
 client.on("messageCreated", async (message: Message) => {
     if(message.content === `${configuration.modules.commands.prefix}ping`) {
