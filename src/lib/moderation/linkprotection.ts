@@ -13,7 +13,8 @@ client.on("messageCreated", async (message: Message) => {
     const roles = await (
       await client.members.fetch(process.env.SERVER_ID!, author)
     ).getRoles();
-    if (configuration.modules.moderation.excluded_roles.some((role: number)=>roles.includes(role))) {
+    let excluded_roles: number[] = configuration.modules.moderation.submodules.linkprotection.excluded_roles
+    if (!roles.some(item => excluded_roles.includes(item))) {
       console.log("Message contained only a url!");
       client.messages
         .delete(message.channelId, message.id)
