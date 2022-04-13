@@ -6,14 +6,14 @@ const fs = require('fs')
 const path = require("path")
 
 async function loadSubmodules() {
-    consola.log('- Loading moderation submodules...')
+    consola.log('🔧 Loading moderation submodules...')
     let modules = configuration.modules.moderation.submodules
 
     try {
         let key: string, value: any
         for ([key, value] of Object.entries(modules)) {
             if(value.enabled) {
-                consola.success(`Enabled 'moderation/${key}' module.`)
+                consola.log(`🧩 Enabled 'moderation/${key}' submodule.`)
                 require(path.resolve(__dirname, `./moderation/${key}`))
             }
           }

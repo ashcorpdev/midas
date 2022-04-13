@@ -5,7 +5,12 @@ let guildedClient: Client
 
 async function init() {
   require('../config').reloadConfiguration().then(() => {
-    consola.warn(`Running in ${process.env.ENVIRONMENT} environment.`)
+    if(process.env.ENVIRONMENT === 'development') {
+      
+    consola.warn(`RUNNING IN ${process.env.ENVIRONMENT.toUpperCase()} ENVIRONMENT.`)
+    } else {
+      consola.success(`Running in ${process.env.ENVIRONMENT} environment.`)
+    }
     const { Client } = require("guilded.js")
     guildedClient = new Client({ token: process.env.GUILDED_API_TOKEN })
     guildedClient.on("ready", async () => {

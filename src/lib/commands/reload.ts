@@ -2,11 +2,12 @@ import Client, { Message } from "guilded.js"
 import consola from "consola"
 const { configuration, reloadConfiguration } = require('../../config')
 const client: Client = require('../client').guildedClient
-consola.success('Loaded reload command.')
+consola.log('✅ Loaded reload command.')
 
 client.on("messageCreated", async (message: Message) => {
     if(message.content === `${configuration.modules.commands.prefix}reload`) {
         const reply = await client.messages.send(message.channelId, "Reloading commands...")
+        consola.info('Reload was requested by a user...')
         await reloadConfiguration().then(() => {
             consola.success('Reloaded commands!')
             client.messages.delete(message.channelId, message.id)
