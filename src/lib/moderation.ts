@@ -4,7 +4,8 @@ const client: Client = require('./client').guildedClient
 const fs = require('fs')
 const path = require("path")
 
-async function loadModules() {
+async function loadSubmodules() {
+    console.log('Loading moderation submodules...')
     let modules = configuration.modules.moderation.submodules
 
     try {
@@ -20,4 +21,4 @@ async function loadModules() {
     
 }
 
-loadModules()
+loadSubmodules()

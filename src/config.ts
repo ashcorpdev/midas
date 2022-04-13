@@ -20,6 +20,8 @@ async function loadModules() {
           }
           
     } catch (error) { console.log(error) }
+
+    console.log('Configuration complete. Midas is active.')
     
 }
 
