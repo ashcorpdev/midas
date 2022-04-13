@@ -1,4 +1,4 @@
-import Client from "guilded.js";
+import Client from "guilded.js"
 
 let guildedClient: Client
 
@@ -10,16 +10,12 @@ async function init() {
     guildedClient.on("ready", async () => {
       console.log("Client is ready!")
       require('../config').loadModules()
-    });
-    module.exports.guildedClient = guildedClient;
+    })
+    module.exports.guildedClient = guildedClient
     guildedClient.login()
-  }).catch((err: Error) => {
-    console.log(`Error loading client: ${err}`)
-  });
+  }).catch((err: Error) => console.log(`Error loading client: ${err}`))
 
 }
 init()
 
-module.exports = {
-  init
-}
+module.exports = init

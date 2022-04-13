@@ -13,15 +13,12 @@ async function loadModules() {
     try {
         let key: string, value: any
         for ([key, value] of Object.entries(modules)) {
-            //console.log(`${key}: ${value}`);
             if(value.enabled) {
                 console.log(`Enabled '${key}' module.`)
                 require(`./lib/${key}`)
             }
           }
-    } catch (error) {
-        console.log(error)
-    }
+    } catch (error) { console.log(error) }
     
 }
 

@@ -1,7 +1,7 @@
-import Client, { Message } from "guilded.js";
-const { configuration } = require('../../config');
-const client: Client = require('../client').guildedClient;
-
+import Client, { Message } from "guilded.js"
+const { configuration } = require('../../config')
+const client: Client = require('../client').guildedClient
+console.log('Loaded ping command.')
 
 client.on("messageCreated", async (message: Message) => {
     if(message.content === `${configuration.modules.commands.prefix}ping`) {
@@ -9,10 +9,8 @@ client.on("messageCreated", async (message: Message) => {
         client.messages.delete(message.channelId, message.id)
         setTimeout(function(){
             client.messages.delete(message.channelId, reply.id)
-        },5000);
+        },5000)
     }
 })
 
-
-console.log('Loaded ping command.')
-module.exports = {};
+module.exports = {}
