@@ -1,0 +1,14 @@
+[
+    {
+        "id": 0,
+        "name": "Contact the Moderators",
+        "description": "Please react below to create a moderator ticket. The moderators will be made aware and will get back to you shortly.",
+        "emoji": "📩",
+        "panel_channel": 0,
+        "message_id": 0,
+        "open_category": 0,
+        "closed_category": 0,
+        "transcripts_channel": 0,
+        "alert_channel": 0
+    }
+]
