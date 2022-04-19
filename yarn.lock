@@ -15,6 +15,14 @@
     "@discordjs/collection" "^0.5.0"
     uuid "^8.3.2"
 
+"@guildedjs/gil@^0.0.4-dev":
+  version "0.0.4-dev"
+  resolved "https://registry.yarnpkg.com/@guildedjs/gil/-/gil-0.0.4-dev.tgz#d51f2ad3413dd9e255d5c231b1e11d18d19cc81d"
+  integrity sha512-k75pIr8ZgZSUSTmtP7iGVfC+8B7ygsJwoJQe1ItTRbSSsnm8A+6hAE1PSeP4+LQ2RPpdc70qLDqx2dzyPoQRhg==
+  dependencies:
+    colorette "^2.0.16"
+    guilded.js "0.4.4"
+
 "@guildedjs/guilded-api-typings@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@guildedjs/guilded-api-typings/-/guilded-api-typings-2.2.0.tgz#17ad7add31c609d4780190ad23b0762ab609f3f5"
@@ -29,6 +37,15 @@
     node-fetch "^2.6.7"
     qs "^6.10.3"
 
+"@guildedjs/rest@2.3.2", "@guildedjs/rest@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@guildedjs/rest/-/rest-2.3.2.tgz#e6010b2e44f5c70b8ddc555c10128d45dd618fe5"
+  integrity sha512-qC64tnIZy5RtD9Xf86Qn2eHcpff/CspFdfN4R14lL8FTTrBI8ES+yQfX0pr0r29gLWmUaGJAKJ5QYWjEr6R7Yg==
+  dependencies:
+    "@guildedjs/common" "2.1.0"
+    node-fetch "^2.6.7"
+    qs "^6.10.3"
+
 "@guildedjs/webhook-client@0.0.2-dev":
   version "0.0.2-dev"
   resolved "https://registry.yarnpkg.com/@guildedjs/webhook-client/-/webhook-client-0.0.2-dev.tgz#a3198360120efa28c3e5b712c215bdff8f5053c5"
@@ -37,10 +54,29 @@
     "@guildedjs/common" "2.1.0"
     "@guildedjs/rest" "2.2.1"
 
+"@guildedjs/webhook-client@0.0.4-dev":
+  version "0.0.4-dev"
+  resolved "https://registry.yarnpkg.com/@guildedjs/webhook-client/-/webhook-client-0.0.4-dev.tgz#a612bfea8d89cd593251e606b75b5760b038dab8"
+  integrity sha512-KsYma15E91v0SjEAQCk0Dje80HlBLdyOEKoU1s2mxdsIpDKS3I9qSSnYtlWmRn5HhvCvojBbXU60Dy019YvX2w==
+  dependencies:
+    "@guildedjs/common" "2.1.0"
+    "@guildedjs/rest" "2.3.2"
+
 "@guildedjs/ws@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@guildedjs/ws/-/ws-1.2.1.tgz#2209d0534ab743bdcdbd2907f81a4cb5ca859b1b"
   integrity sha512-fPDhbwhk9oXCBbQJ11eouNv8mbmPYj2U9ai+JBEOoy7Dk1CjRL2UarhuvqAae2Jb18ntoFrdJ2hZwz7l1NBCww==
+  dependencies:
+    "@guildedjs/common" "^2.1.0"
+    "@guildedjs/guilded-api-typings" "^2.2.0"
+    "@types/ws" "8.5.3"
+    typed-emitter "2.1.0"
+    ws "8.5.0"
+
+"@guildedjs/ws@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@guildedjs/ws/-/ws-1.2.2.tgz#8d5e52f8942742360350b62f271654eb314c6fb0"
+  integrity sha512-cHP7XNjLC0+lNRvCHX9CrdZmv4feX5a3HaVEYX/uVyV3DawL6JrY8czZcG+qmY3BHgD0K8nV6732xYRU0eQtuQ==
   dependencies:
     "@guildedjs/common" "^2.1.0"
     "@guildedjs/guilded-api-typings" "^2.2.0"
@@ -72,6 +108,11 @@ call-bind@^1.0.0:
   dependencies:
     function-bind "^1.1.1"
     get-intrinsic "^1.0.2"
+
+colorette@^2.0.16:
+  version "2.0.16"
+  resolved "https://registry.yarnpkg.com/colorette/-/colorette-2.0.16.tgz#713b9af84fdb000139f04546bd4a93f62a5085da"
+  integrity sha512-hUewv7oMjCp+wkBv5Rm0v87eJhq4woh5rSR+42YSQJKecCqgIqNkZ6lAlQms/BwHPJA5NKMRlpxPRv0n8HQW6g==
 
 consola@^2.15.3:
   version "2.15.3"
@@ -128,6 +169,17 @@ get-intrinsic@^1.0.2:
     function-bind "^1.1.1"
     has "^1.0.3"
     has-symbols "^1.0.1"
+
+guilded.js@0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/guilded.js/-/guilded.js-0.4.4.tgz#a3cf1a1dba4a24c3940dd96304279b282e55bfdb"
+  integrity sha512-SHl+GXCdK1drWXlV5uGkT0qxa2JOq6i6k4gbuxrFB7jDVl2prRp5Wj7DrXRLXnvpAZLsY3upZ3Glna3nvgfyUQ==
+  dependencies:
+    "@discordjs/collection" "^0.5.0"
+    "@guildedjs/common" "^2.1.0"
+    "@guildedjs/rest" "^2.3.2"
+    "@guildedjs/webhook-client" "0.0.4-dev"
+    "@guildedjs/ws" "^1.2.2"
 
 guilded.js@^0.4.1:
   version "0.4.1"

@@ -1,0 +1,10 @@
+[
+    {
+        "id": 0,
+        "name": "Moderator tickets",
+        "open_category": "",
+        "closed_category": "",
+        "transcript_channel": "",
+        "role_to_ping": ""
+    }
+]

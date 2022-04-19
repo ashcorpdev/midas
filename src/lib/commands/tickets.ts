@@ -1,3 +1,4 @@
+import { MessageCollector } from '@guildedjs/gil'
 import Client, { Message } from "guilded.js"
 import consola from "consola"
 const { configuration, reloadConfiguration } = require('../../config')
@@ -20,7 +21,7 @@ client.on("messageCreated", async (message) => {
             case 'setup':
                     if(first_setup) {
                         consola.log('**[Debug]** First setup requested.')
-                        client.messages.send(message.channelId, "**[Debug]** First setup requested!")
+                        client.messages.send(message.channelId, "**[Tickets]** Please give a name to the tickets section:")
                         client.messages.send(message.channelId, `Please type \`${configuration.modules.commands.prefix}tickets new panel\``)
                         
                     }
