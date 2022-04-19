@@ -1,10 +1,10 @@
 import Client, { Member, Message } from "guilded.js"
 import consola from "consola"
+import { BotClient } from "@guildedjs/gil"
 const { configuration } = require('../config')
-const client: Client = require('./client').guildedClient
+const client: BotClient = require('./client').guildedClient
 const fs = require('fs')
 const path = require("path")
-const panelbuilder = require('./tickets/panelbuilder')
 let first_setup = true
 
 async function init() {

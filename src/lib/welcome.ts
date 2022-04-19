@@ -1,8 +1,9 @@
 import Client, { Member, Message } from "guilded.js"
 import consola from "consola"
 import fs from 'fs'
+import { BotClient } from "@guildedjs/gil"
 const { configuration } = require('../config')
-const client: Client = require('./client').guildedClient
+const client: BotClient = require('./client').guildedClient
 
 client.on( 'memberJoined', async (member: Member) => {
     consola.info('New member joined.')
