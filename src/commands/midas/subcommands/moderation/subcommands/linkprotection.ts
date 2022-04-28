@@ -5,20 +5,6 @@ const { reloadConfiguration } = require('../../../../../config')
 const client: BotClient = require('../../../../../lib/client').guildedClient
 consola.log('✅ Loaded moderation-linkprotection command.')
 
-/**
- * @todo Make sure that the provided links are added to an approved subdomains configuration file.
- */
-
-/**
- * The following example allows 'google.com' domain links to be posted.
- * @example !midas moderation linkprotection add https://google.com
- * // returns https://google.com added to the approved links list!
- */
-/**
- * The following example removes 'google.com' domain links from the approved list.
- * @example !midas moderation linkprotection remove https://google.com
- * // returns https://google.com removed from the approved links list!
- */
 export default class BotCommand extends Command {
     init() {
     }
