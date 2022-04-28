@@ -20,7 +20,7 @@ export class LinksMonitor extends Monitor {
         let response: RESTPostChannelMessagesBody = {
             isPrivate: true,
             replyMessageIds: [message.id],
-            content: 'You are not allowed to post links.',
+            content: config.configuration.lang.links.deleted_link,
 
         }
         message.send(response)
