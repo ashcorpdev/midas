@@ -1,8 +1,7 @@
-import { BotClient, Command } from "@guildedjs/gil";
+import { Command } from "@guildedjs/gil";
 import { Message } from "guilded.js";
 import consola from "consola"
-const { reloadConfiguration } = require('../../../../../config')
-const client: BotClient = require('../../../../../lib/client').guildedClient
+const config = require('../../../../../config')
 consola.log('✅ Loaded moderation-linkprotection command.')
 
 export default class BotCommand extends Command {
@@ -27,30 +26,30 @@ export default class BotCommand extends Command {
         switch (args.subcommand) {
             case "add":
                 if(args.text == undefined) {
-                    return await message.send('No link provided, please ensure you include a link.')
+                    return await message.send(config.configuration.lang.links.no_link_provided)
                 } else {
                     const urlPattern = new RegExp(/\[([^\[]+)\](\(.*\))/gm)
                     if (args.text.match(urlPattern)) {
                         let matched = args.text.replace(/\[([^\]]+)\][^\)]+\)/g, '$1') // This strips the markdown formatting off of the link and outputs just the raw text.
-                        return await message.send(`${matched} added to the approved links list!`)
+                        return await message.send(config.configuration.lang.links.approved_link)
                     } else {
-                        return await message.send('Invalid link specified!')
+                        return await message.send(config.configuration.lang.links.invalid_link)
                     }
                 }
             case "remove":
                 if(args.text == undefined) {
-                    return await message.send('No link provided, please ensure you include a link.')
+                    return await message.send(config.configuration.lang.links.no_link_provided)
                 } else {
                     const urlPattern = new RegExp(/\[([^\[]+)\](\(.*\))/gm)
                     if (args.text.match(urlPattern)) {
                         let matched = args.text.replace(/\[([^\]]+)\][^\)]+\)/g, '$1') // This strips the markdown formatting off of the link and outputs just the raw text.
-                        return await message.send(`${matched} removed from the approved links list!`)
+                        return await message.send(config.configuration.lang.links.blocked_link)
                     } else {
-                        return await message.send('Invalid link specified!')
+                        return await message.send('')
                     }
                 }
             default:
-                return await message.reply('Invalid argument specified!')
+                return await message.reply(config.configuration.lang.commands.invalid_argument)
         }
     }
 }

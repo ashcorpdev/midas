@@ -5,7 +5,7 @@ async function reloadConfiguration(): Promise<any> {
     try {
     consola.log('🔧 Loading configuration...')
     config = require('../config.json')
-    consola.log(`🔧 Registering bot as '${config.name}'.`)
+    consola.log(`🔧 Registering bot as '${config.lang.bot_name}'.`)
     module.exports.configuration = config
     return config
     } catch (error) {

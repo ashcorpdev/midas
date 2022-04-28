@@ -15,8 +15,6 @@ export class LinksMonitor extends Monitor {
         const exemptRoles = config.configuration.links.exempt_roles
         const hasExemption = exemptRoles.every((role: number) => roles.includes(role));
         if(hasExemption) return;
-
-        let matched = message.content.replace(/\[([^\]]+)\][^\)]+\)/g, '$1') // This strips the markdown formatting off of the link and outputs just the raw text.
         let response: RESTPostChannelMessagesBody = {
             isPrivate: true,
             replyMessageIds: [message.id],
