@@ -1,0 +1,27 @@
+{
+  "environment": "development",
+  "prefix": "!",
+  "server_id": "123abc",
+  "moderator_roles": [
+    12334235
+  ],
+  "links": {
+    "exempt_roles": [ 123125 ],
+    "banned_links": []
+  },
+  "lang": {
+    "bot_name": "Midas",
+    "commands": {
+      "invalid_command": "",
+      "invalid_argument": ""
+    },
+    "links": {
+      "deleted_link": "You must be an active member to post links.",
+      "no_link_provided": "No link provided, please ensure you include a link.",
+      "invalid_link": "Invalid link specified!",
+      "approved_link": "URL {} was approved!",
+      "blocked_link": "URL {} was blocked!",
+      "banned_link": "This link is banned."
+    }
+  }
+}
